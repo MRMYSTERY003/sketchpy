@@ -72,7 +72,7 @@ it should probably work, If not then try the following code
     obj = lib.vijay()
     obj.draw()
 ```
-<div style = "display: flex; justify-content: space-between;"> 
+<div align = 'center' style = "display: flex; justify-content: space-between;"> 
 <img src = "https://user-images.githubusercontent.com/80098044/154793329-e8ec9635-b49e-4898-8a3e-6462645d6c8c.gif" height = 180 width = 214>
 <img src = "https://user-images.githubusercontent.com/80098044/154793382-6d012c24-adbf-4c5a-bd51-b5095a34e9fe.gif" height = 180 width = 214>
 </div>
