@@ -1,103 +1,102 @@
 # Welcome to sketchpy
 
-Intro to the project and some quick information,followed by an image of the project.
+<h2>Intro to the project and some quick information,followed by an image of the project.<h2>
 
 <div align="center">
-    <a  href ="https://user-images.githubusercontent.com/80098044/154790340-5bfd12d0-e168-4dc8-a162-78dc4672abfa.jpg"></a>
+    <img src = "images/rdj.jpg"></a>
 </div>
 
 ## Description
 
-Longer description explaining the rationale/intent behind the project, what it's good for, and how it works. If the next two subsections are short enough, they can be merged up into this block—perhaps as bulleted lists.
+This is the beginning level python project to do some awesome drawing animation using the `turtle` module, hope it grows in the future
 
-### Features
+### Usage
 
-- Short and to the point
-- Important things about the project
+- Just install the package `pip install sketchpy`
+- Import it to you project `import sketchpy` and use as you want😊
 
 ### Built with
 
-- Markdown
-- Love
+- Turtle 
+- Open-cv
+- Pillow
 
 ## Getting started
 
 ### Prerequisites
 
-Dependencies not explicitly covered in the installation process; e.g., OS restrictions.
+- Python
+- Basic text editor
+- creativity😂
 
 ### Install
 
-Ideally, write a script whose usage is described here.
+```
+    pip install sketchpy
+```
+it should probably work, If not then try the following code
+    
+```
+    pip install turtle open-cv wheel sketchpy
+```
 
-### Configure
 
-Manual, context-specific tasks not covered in the installation process.
+### Example
 
-### Usage
+```
+    from sketchpy import library as lib
+    
 
-GIFs are useful here to see the project in action.
+    obj = lib.rdj()
+    obj.draw()
+```
+
+### OUTPUT
+<div align = "center">
+   <img src = "https://user-images.githubusercontent.com/80098044/154792552-59c53805-35b9-46e0-be37-2c5dae0a87d1.gif">
+</div>
+
+    
+### More examples
+
+```
+    from sketchpy import library as lib
+    
+    obj = lib.bts()
+    obj.draw()
+```
+
+```
+    from sketchpy import library as lib
+
+    obj = lib.vijay()
+    obj.draw()
+```
+<div align = center style = "display: flex; justify-content: space-between;"> 
+<img src = "https://user-images.githubusercontent.com/80098044/154793329-e8ec9635-b49e-4898-8a3e-6462645d6c8c.gif" height = 360 width = 428>
+<img src = "https://user-images.githubusercontent.com/80098044/154793382-6d012c24-adbf-4c5a-bd51-b5095a34e9fe.gif" height = 360 width = 428>
+</div>
 
 ### Troubleshooting
 
-Or FAQs, if that's more appropriate.
+- If you find any problem, you can pull request, or contact me on either insta(https://www.instagram.com/mr.m_y_s_t_e_r_y/) or [discord](https://discord.gg/r2KFa73PM2)
+- You can also find video on my [youtube channel](https://www.youtube.com/playlist?list=PLb1Kbw_2jl_mr3A_cl6pXA1N5lwtHCx_7)
 
-## Photos
 
-Some more photos of the project and the build process.
 
-<div align="center">
-  <kbd>
-    <img src="images/frank-wang-ogxlyCA1BQc-unsplash.jpg" />
-  </kbd>
-    
-  caption of what is in this photo
-</div>
-
-<div align="center">
-  <kbd>
-    <img src="images/nicolas-thomas-3GZi6OpSDcY-unsplash.jpg" />
-  </kbd>
-    
-  caption of what is in this photo
-</div>
-
-<div align="center">
-  <kbd>
-    <img src="images/sahand-babali-owjrvbyXYyc-unsplash.jpg" />
-  </kbd>
-    
-  caption of what is in this photo
-</div>
-
-## Back matter
-
-### Legal disclaimer
-
-Usage of this tool for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 ### Acknowledgements
 
-Thanks to all who helped inspire this template.
+Thanks to all who helped inspire this project.❤
 
 ### See also
 
-- [A simple README.md template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
-- [A template to make good README.md](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-- [A sample README for all your GitHub projects](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
-- [A simple README.md template to kickstart projects](https://github.com/me-and-company/readme-template)
+- [Youtube Videos](https://www.youtube.com/playlist?list=PLb1Kbw_2jl_mr3A_cl6pXA1N5lwtHCx_7)
+- [Related Blogs](https://codehub0.blogspot.com/)
+- [Contact me on Discord](https://discord.gg/r2KFa73PM2)
+- [My insta ID](https://www.instagram.com/mr.m_y_s_t_e_r_y/)
 
-### To-do
-
-- [ ] Still need to do this
-- [ ] ~~Decided not to do this~~
-- [x] Done!
 
 ### License
 
 This project is licensed under the [MIT License](LICENSE.md).
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [Adapted from TINY README](https://gist.github.com/noperator/4eba8fae61a23dc6cb1fa8fbb9122d45)
