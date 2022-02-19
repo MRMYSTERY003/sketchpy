@@ -1,5 +1,6 @@
 import turtle as tu
-import cv2 
+import cv2
+
 
 
 class trace:
@@ -186,6 +187,109 @@ class sketch:
             tu.done()
 
     
+
+class ascii_art:
+    def __init__(self):
+        pass
+
+    def convert_to_acsii(self, img_path, file_name = None) -> str:
+        """Converts the given image to ascii art and save it to output_file"""
+
+        from PIL import Image
+        # pass the image as command line argument
+        img = Image.open(img_path)
+
+        # resize the image
+        width, height = img.size
+        aspect_ratio = height / width
+        new_width = 80
+        new_height = aspect_ratio * new_width * 0.55
+        img = img.resize((new_width, int(new_height)))
+        # new size of image
+        # print(img.size)
+
+        # convert image to greyscale format
+        img = img.convert('L')
+
+        pixels = img.getdata()
+
+        # replace each pixel with a character from array
+        chars = ["*", "S", "#", "&", "@", "$", "%", "*", "!", ":", "."]
+        new_pixels = [chars[pixel // 25] for pixel in pixels]
+        new_pixels = ''.join(new_pixels)
+
+        # split string of chars into multiple strings of length equal to the new width and create a list
+        new_pixels_count = len(new_pixels)
+        ascii_image = [new_pixels[index:index + new_width]
+                    for index in range(0, new_pixels_count, new_width)]
+        ascii_image = "\n".join(ascii_image)
+
+        # write to a text file.
+        if file_name != None:
+            with open(f"{file_name}.txt", "w") as f:
+                f.write(ascii_image)
+        return ascii_image
+
+    def load_data(self,file_path = None, img_path = None, raw_data = None):
+
+        if img_path != None:
+            self.data = self.convert_to_acsii(img_path)
+        elif file_path != None:
+            re = open(file_path, 'r')
+            self.data = re.readlines()
+        elif raw_data != None:
+            self.data = raw_data
+            print('sepcify the correct data')
+            return
+        return self.data
+
+    def draw(self, data):
+        #setting the x and y coordinates
+        s_x = -320                  
+        s_y = 250
+
+        p = tu.Pen()
+        p.speed(0)
+        tu.bgcolor('black')
+        p.up()
+        p.width(2)
+        f_m = 0
+        d_m = 4
+
+        # function to select the color
+        def set_col(c):
+            chars = {"*": 'white', "S" : 'green', "#" : 'green', "&" : 'white', "@":'black', "$" : 'white', "%" : 'white', "!":'blue', ":" :'darkgreen', ".":'grey'}
+            col = chars[c]
+            p.pencolor(col)
+
+        def d(m, s_char):
+            p.up()
+            if s_char != '\n':
+                set_col(s_char)
+
+            p.goto(s_x- m, s_y )
+            p.down()
+            p.forward(1)
+
+
+
+        for i in self.data:
+            for j in i:
+                d(f_m, j)
+                f_m -= 4
+            s_y -= 9
+            s_x = -320
+            f_m = 0
+            d_m = 4
+
+        tu.done()
+
+    def print_to_terminal(self):
+        for i in self.data:
+            print(i,end = '')
+
+
+
 
 
 
