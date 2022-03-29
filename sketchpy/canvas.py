@@ -291,6 +291,7 @@ class ascii_art:
             print(i,end = '')
 
 from tqdm import tqdm
+import numpy as np
 class sketch_from_svg:
 
     def __init__(self,path,scale=500,x_offset=300,y_offset=300):
@@ -324,15 +325,18 @@ class sketch_from_svg:
 
     
 
-    def load_svg(self):
+    def load_svg(self,file = None):
         print('loading data')
         paths,attributes,svg_att = svg2paths2(self.path)
         h = svg_att["height"]
         w = svg_att['width']
         self.height = int(h[:h.find('.')])
         self.width = int(w[:w.find('.')])
+        self.x_offset = self.width//2
+        self.y_offset = self.height//2
 
         res = []
+        res.append([self.height,self.width])
         for i in tqdm(attributes):
             path = parse_path(i['d'])
             co = i['fill']
@@ -344,6 +348,10 @@ class sketch_from_svg:
             res.append((pts,col))
             #res.append(pts)
         print('svg data loaded')
+        if file != None:
+            temp = np.array(res)
+            np.save(file,res,allow_pickle=True)
+            print(f'file is saved to {res}....')
         return res
 
     def move_to(self,x, y):
@@ -352,11 +360,21 @@ class sketch_from_svg:
         self.pen.down()
 
 
-    def draw(self,retain=True):
-        coordinates = self.load_svg()
+    def draw(self,retain=True,file = None):
+        if file != None:
+            coordinates = np.load(file,allow_pickle=True)
+            print(f'datas are loaded from {file}')
+        else:
+            coordinates = self.load_svg()
         self.pen = tu.Turtle()
         self.pen.speed(0)
-        for path_col in coordinates:
+        self.screen = tu.Screen()
+        dimension = coordinates[0]
+        height = dimension[0]
+        width = dimension[1]
+        print(height,width)
+        self.screen.setup(width,height)
+        for path_col in coordinates[1:]:
             f = 1
             self.pen.color('black')
             #print(path_col)
