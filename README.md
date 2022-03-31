@@ -76,6 +76,39 @@ it should probably work, If not then try the following code
 <img src = "https://user-images.githubusercontent.com/80098044/154793329-e8ec9635-b49e-4898-8a3e-6462645d6c8c.gif" height = 180 width = 214>
 <img src = "https://user-images.githubusercontent.com/80098044/154793382-6d012c24-adbf-4c5a-bd51-b5095a34e9fe.gif" height = 180 width = 214>
 </div>
+    
+# Drawing from SVG file
+    
+Use the following code to draw a file from svg file, insted of tracing full image
+    
+NOTE: use this specific website to convert image to svg, sketchpy is specifically 
+      made to work with this website only
+    
+```
+    from sketchpy import canvas
+    obj = canvas.draw_from_svg('FILE PATH')
+    obj.draw()
+```
+    
+# Saving a loaded svg file
+
+Insted of waiting for the svg file to load, you can save as .npy file and use that for future use
+    
+```
+    from sketchpy import canvas
+    obj = canvas.draw_from_svg('FILE PATH')
+    obj.load_svg(filename = 'data.npy')
+```
+
+## Drawing form .npy file
+
+use the following code to draw your image from saved data file
+    
+```
+    from sketchpy import canvas
+    obj = canvas.draw_from_svg('FILE PATH')
+    obj.draw(filename = 'data.npy')
+``` 
 
 ### Troubleshooting
 
