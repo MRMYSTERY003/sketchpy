@@ -96,7 +96,7 @@ Insted of waiting for the svg file to load, you can save as .npy file and use th
     
 ```
     from sketchpy import canvas
-    obj = canvas.draw_from_svg('FILE PATH')
+    obj = canvas.sketch_from_svg('FILE PATH')
     obj.load_svg(filename = 'data.npy')
 ```
 
@@ -106,7 +106,7 @@ use the following code to draw your image from saved data file
     
 ```
     from sketchpy import canvas
-    obj = canvas.draw_from_svg('FILE PATH')
+    obj = canvas.sketch_from_svg('FILE PATH')
     obj.draw(filename = 'data.npy')
 ``` 
 
