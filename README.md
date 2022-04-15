@@ -20,6 +20,7 @@ This is the beginning level python project to do some awesome drawing animation 
 - Turtle 
 - Open-cv
 - Pillow
+- Svgpathtools
 
 ## Getting started
 
@@ -77,12 +78,11 @@ it should probably work, If not then try the following code
 <img src = "https://user-images.githubusercontent.com/80098044/154793382-6d012c24-adbf-4c5a-bd51-b5095a34e9fe.gif" height = 180 width = 214>
 </div>
     
-# Drawing from SVG file
+# Drawing from `SVG` file
     
 Use the following code to draw a file from svg file, insted of tracing full image
     
-NOTE: use this specific website to convert image to svg, sketchpy is specifically 
-      made to work with this website only
+#### NOTE: use this specific website to convert image to svg, sketchpy is specifically made to work with this [website](https://svgconvert.com/#/) only
     
 ```
     from sketchpy import canvas
@@ -90,7 +90,7 @@ NOTE: use this specific website to convert image to svg, sketchpy is specificall
     obj.draw()
 ```
     
-# Saving a loaded svg file
+# `Saving` a loaded svg file
 
 Insted of waiting for the svg file to load, you can save as .npy file and use that for future use
     
@@ -100,7 +100,7 @@ Insted of waiting for the svg file to load, you can save as .npy file and use th
     obj.load_svg(filename = 'data.npy')
 ```
 
-## Drawing form .npy file
+## Drawing form `.npy` file
 
 use the following code to draw your image from saved data file
     
@@ -109,6 +109,16 @@ use the following code to draw your image from saved data file
     obj = canvas.sketch_from_svg('FILE PATH')
     obj.draw(filename = 'data.npy')
 ``` 
+    
+## Drawing from `raw image`
+    
+use the following code to draw any image, it need not to be an svg file
+```
+    from sketchpy import canvas
+    obj = canvas.sketch_from_image('IMAGE PATH')
+    obj = draw(threshold = 127)
+```
+#### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
 
 ### Troubleshooting
 
