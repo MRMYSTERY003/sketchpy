@@ -3,7 +3,7 @@
 <h2>Intro to the project and some quick information,followed by an image of the project.<h2>
 
 <div align="center">
-    <img src = "images/rdj.jpg"></a>
+    <img src = 'https://user-images.githubusercontent.com/80098044/163577650-cd52c226-5cc2-464f-a5b2-a647a4924cc6.jpg'>
 </div>
 
 ## Description
