@@ -139,6 +139,14 @@ Thanks to all who helped inspire this project.❤
 - [Contact me on Discord](https://discord.gg/r2KFa73PM2)
 - [My insta ID](https://www.instagram.com/mr.m_y_s_t_e_r_y/)
 
+### Consider supporting me
+
+- upi id sriramanand23@okicici
+- scan and encourage us to develop more features
+- even one rupee make a huge difference
+
+![gpay qr code](https://user-images.githubusercontent.com/80098044/177810955-d9e1dae5-e84e-4839-a806-da76f93cb27e.jpg)
+
 
 ### License
 
