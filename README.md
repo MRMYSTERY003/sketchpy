@@ -86,7 +86,7 @@ Use the following code to draw a file from svg file, insted of tracing full imag
     
 ```
     from sketchpy import canvas
-    obj = canvas.draw_from_svg('FILE PATH')
+    obj = canvas.sketch_from_svg('FILE PATH')
     obj.draw()
 ```
     
