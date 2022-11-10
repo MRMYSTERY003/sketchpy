@@ -116,7 +116,7 @@ use the following code to draw any image, it need not to be an svg file
 ```
     from sketchpy import canvas
     obj = canvas.sketch_from_image('IMAGE PATH')
-    obj = draw(threshold = 127)
+    obj.draw(threshold = 127)
 ```
 #### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
 
