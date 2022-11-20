@@ -288,6 +288,9 @@ class ascii_art:
     def print_to_terminal(self):
         for i in self.data:
             print(i, end='')
+    
+    def save(image, fName): # image will be img object pre-defined in user's code.
+        image.save(fName + ".jpg")
 
 
 class sketch_from_svg:
@@ -298,6 +301,10 @@ class sketch_from_svg:
         self.x_offset = x_offset
         self.y_offset = y_offset
         self.scale = scale
+  
+    def save(image, fName): # image will be img object pre-defined in user's code.
+        image.save(fName + ".jpg")
+  
 
     def hex_to_rgb(self, string):
         strlen = len(string)
@@ -410,7 +417,8 @@ class sketch_from_svg:
                 else:
                     self.pen.goto(x, y)
             self.pen.end_fill()
-
+       
+  
         if retain == True:
             tu.done()
 
@@ -418,6 +426,9 @@ class sketch_from_svg:
 class sketch_from_image:
     def __init__(self, path) -> None:
         self.path = path
+
+    def save(image, fName): # image will be img object pre-defined in user's code.
+        image.save(fName + ".jpg")
 
     def draw(self, threshold=127):
 
@@ -460,6 +471,9 @@ class color_sketch_from_svg:
         self.x_offset = x_offset
         self.y_offset = y_offset
         self.scale = scale
+    
+    def save(image, fName): # image will be img object pre-defined in user's code.
+        image.save(fName + ".jpg")
 
     def hex_to_rgb(self, string):
         strlen = len(string)
