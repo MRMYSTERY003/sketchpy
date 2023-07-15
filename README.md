@@ -27,6 +27,29 @@ To install sketchpy on your computer, you can go to your command prompt (command
 
 ## Getting started
 
+### Lastes version of sketchpy: 0.1.7
+
+- you can install the latest version with either
+```
+    pip install sketchpy==0.1.7
+```
+or
+```
+    pip install sketchpy --U
+```
+
+- the lates version of the package includes a class named `trace_from_image()`, which allowes you to get the same output as using a svg file without the need to convert it to a svg file. hecnce it reduces the run time and it is much effecient.
+- To know more about this new class visit the blog post [here](https://codehub03.blogspot.com/2023/07/how-to-draw-ai-hoshino-with-just-3.html). 
+- A sample output of the class
+
+![sketch](https://github.com/MRMYSTERY003/sketchpy/assets/80098044/2c85a64f-be2e-49d6-bfbb-ca8e3a0857be)
+
+- you can take a view about how the class working in [here](https://youtube.com/shorts/_F23GwUJcIU?feature=share)
+
+- The new version also includes parameter `save`, which can be set to true to save the output as screenshot.png file once the sketching is done.
+
+
+
 ### Prerequisites
 
 - Python
@@ -156,11 +179,13 @@ use the following code to draw any image, it need not to be an svg file
     obj.draw(threshold = 127)
 ```
 #### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
+to know more about it visit [here](https://codehub03.blogspot.com/2022/04/how-to-draw-image-with-python-using.html)
 
 ### Troubleshooting
 
 - If you find any problem, you can pull request, or contact me on either [insta](https://www.instagram.com/mr.m_y_s_t_e_r_y/) or [discord](https://discord.gg/r2KFa73PM2)
 - You can also find video on my [youtube channel](https://www.youtube.com/playlist?list=PLb1Kbw_2jl_mr3A_cl6pXA1N5lwtHCx_7)
+- You can know more about sketchpy and get tutorial in this blog [page](https://codehub03.blogspot.com/)
 
 
 
@@ -176,11 +201,13 @@ Thanks to all who helped inspire this project.❤
 - [Contact me on Discord](https://discord.gg/r2KFa73PM2)
 - [My insta ID](https://www.instagram.com/mr.m_y_s_t_e_r_y/)
 
-### Consider supporting me
-
-- upi id sriramanand23@okicici
+# Consider supporting me
+- we spend `hours` to implement these algorithms and making you to access these with just 3 lines
+- consider `supporting` our work.
+- even a single `rupee` conunts.
+- upi id s`riramanand23@okicici`
 - scan and encourage us to develop more features
-- even one rupee make a huge difference
+
 
 ![gpay qr code](https://user-images.githubusercontent.com/80098044/177810955-d9e1dae5-e84e-4839-a806-da76f93cb27e.jpg)
 
