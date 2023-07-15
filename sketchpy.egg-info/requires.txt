@@ -1,7 +1,0 @@
-opencv-python
-turtle==0.0.1
-wheel
-Pillow
-svg.path
-svgpathtools
-tqdm
