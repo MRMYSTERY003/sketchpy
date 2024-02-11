@@ -15,13 +15,14 @@ LONG_DESCRIPTION = """
 
 ## Description
 
-This is the beginning level python project to do some awesome drawing animation using the `turtle` module, hope it grows in the future
+This is the intermediate level python project to do some awesome drawing animation using the `turtle` module, hope it grows in the future
 It is a Python module for animating drawings of images. The sketchpy module is created on top of the turtle module in Python.
 To install sketchpy on your computer, you can go to your command prompt (command line) and run the following command.
 
 ### Usage
 
 - Just install the package `pip install sketchpy`
+- Followed by `pip install --upgrade sketchpy' to install the latest version
 - Import it to you project `import sketchpy` and use as you want😊
 
 ### Built with
@@ -122,7 +123,7 @@ Open your code editor and write the example Python code snippets given below. Ru
 
 
 
-# Drawing from `SVG` file
+# Drawing from `SVG` file only avaible in version below `0.1.7`
     
 Use the following code to draw a file from svg file, insted of tracing full image
     
@@ -163,6 +164,24 @@ use the following code to draw any image, it need not to be an svg file
     obj.draw(threshold = 127)
 ```
 #### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
+
+## Drawing color full image
+
+To get the correct svg converter, you can use the following code to open up the website
+```
+    from sketchpy import utils
+    utils.get_svg()
+```
+This will open up the default website, I am using url shorter from monitizing this project. please use the method proviede here.
+Using brave browser will mostly remove all the ads from the url shortener
+    
+use the following code to draw any image, it need not to be an svg file
+```
+    from sketchpy import canvas
+    obj = canvas.sketch_from_image('IMAGE PATH')
+    obj.draw(threshold = 127)
+```
+
 
 ### Troubleshooting
 
