@@ -40,8 +40,8 @@ or
 
 ## Updates!!
 
-- This version `0.1.8` uses multiprocessing from processing the single svg file in 4 different threads to reduce the time for loading the svg file
--Sample
+- This version `0.1.8` uses multiprocessing for processing the single svg file in 4 different threads to reduce the time for loading the svg file
+- Sample
     <div align = "center">
        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/5b09576e-3759-4501-bcf4-5134a9c1a133">
     </div>
@@ -51,7 +51,7 @@ or
       from sketchpy import utils
       uitls.get_svg()
   ```
-- I have include a short url, to monitize this sketchpy package, Just 4 little steps then you can use your svg converter
+- I have include a short url, to monitize this sketchpy package, Just 5 little steps then you can use your svg converter
      - `Step 1` Just click the `I am not robot` button on the top of the website
      - `Step 2` You will be redirected to the second site, where you need to scroll to tbe bottom and wait for about 10 seconds until you see `open-continue` button, click it.
      - `Step 3` A pop up with the same `open-continue` button will be visible, clicl it. Now you will be redirected to another wibsite scroll down and click `I am not a Robot` button.
