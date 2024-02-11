@@ -38,6 +38,8 @@ or
     pip install sketchpy --U
 ```
 
+## Updates!!
+
 - This version `0.1.8` uses multiprocessing from processing the single svg file in 4 different threads to reduce the time for loading the svg file
 -Sample
     <div align = "center">
@@ -183,14 +185,14 @@ Sample Code:
 
 
 ## Sketch from Image
-Used to trace the image line by lineused to trace the image line by line.
+used to trace the image line by line.
 
 Example Code :
 
 ```
     from sketchpy impor canvas
     obj = canvas.sketch_from_image("Image Path")
-    obj.draw()
+    obj.draw(threshold = 127)
 ```
 
 ### Parameters 
@@ -198,9 +200,12 @@ Example Code :
     - save -> used to same the results
 
 you can watch the example video from [here](https://www.youtube.com/watch?v=hCRppNooLYE) 
+#### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
+to know more about it visit [here](https://codehub03.blogspot.com/2022/04/how-to-draw-image-with-python-using.html)
+
 
 ## Drawing From `SVG` file 
-#### NOTE: `sketch_from_svg` class is remove from the package, since it can only draw with single color, `color_sketch_from_svg` class will be available.
+
 
 You can sketch image uinsg the class `color_sketch_from_svg`, which takes the inpu in svg formate and then sketches it.
 Example Code:
@@ -216,54 +221,42 @@ Example output
     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/b2d311a2-a981-4503-9955-58d3f13dc66b">
 </div>
 
+#### NOTE: `sketch_from_svg` class is remove from the package, since it can only draw with single color, `color_sketch_from_svg` class will be available.
+### Parameters 
+    - color_sketch_from_svg
+        - path -> path of the svg file
+        - scale -> zoom value
+        - x_offset -> amount of movemnt in x direction
+        - y_offset -> amount of movemnt in y direction
+        - save -> (True by defaule)= take a screenshot and save it
+    - load_svg
+        - file_name -> name of the npy array, you can use this array data to sketch images directly
+    - draw
+        - retain -> retain the window after sketching (true by defaule)
+        - file -> file path of the npy file for direct sketching
+        - data -> raw data,  should be a list in [[[x1,y1], [x2,y2], ....], [255,255,255]], first nested list is the points and the second list the color
+        - x_offset -> amount of movement in x direction while sketching
+        - y_offset -> amount of movement in y direction while sketching
+        - scale -> zoom value while sketching
+        - speed -> speed of sketching
 
 
 
 
 
+### Sketching form `.npy` file
 
-# Drawing from `SVG` file
-    
-Use the following code to draw a file from svg file, insted of tracing full image
-    
-#### NOTE: use this specific website to convert image to svg, sketchpy is specifically made to work with this [website](https://svgconvert.com/#/) only
-    
-```
-    from sketchpy import canvas
-    obj = canvas.sketch_from_svg('FILE PATH')
-    obj.draw()
-```
-    
-# `Saving` a loaded svg file
-
-Insted of waiting for the svg file to load, you can save as .npy file and use that for future use
-    
-```
-    from sketchpy import canvas
-    obj = canvas.sketch_from_svg('FILE PATH')
-    obj.load_svg(filename = 'data.npy')
-```
-
-## Drawing form `.npy` file
-
+Insted of waiting for the svg file to load, you can saved `.npy` file and use that for future use,
 use the following code to draw your image from saved data file
     
 ```
     from sketchpy import canvas
-    obj = canvas.sketch_from_svg('FILE PATH')
-    obj.draw(filename = 'data.npy')
-``` 
-    
-## Drawing from `raw image`
-    
-use the following code to draw any image, it need not to be an svg file
+    obj = canvas.color_sketch_from_svg(None)
+    obj.draw(file = 'data.npy')
 ```
-    from sketchpy import canvas
-    obj = canvas.sketch_from_image('IMAGE PATH')
-    obj.draw(threshold = 127)
-```
-#### NOTE: you can change the value of threshold to draw more detailed image, it's range is 0 - 255,use values between 90-190
-to know more about it visit [here](https://codehub03.blogspot.com/2022/04/how-to-draw-image-with-python-using.html)
+
+
+    
 
 ### Troubleshooting
 
@@ -289,8 +282,8 @@ Thanks to all who helped inspire this project.❤
 - we spend `hours` to implement these algorithms and making you to access these with just 3 lines
 - consider `supporting` our work.
 - even a single `rupee` conunts.
-- upi id s`riramanand23@okicici`
-- scan and encourage us to develop more features
+- upi id `sriramanand23@okicici`
+- scan and encourage us to develop more features or use the `short url` to get the svg file
 
 
 ![gpay qr code](https://user-images.githubusercontent.com/80098044/177810955-d9e1dae5-e84e-4839-a806-da76f93cb27e.jpg)
