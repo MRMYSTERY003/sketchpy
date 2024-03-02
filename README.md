@@ -48,17 +48,9 @@ or
 - And I have included a new function named `get_svg()` from `utils` to convert your Image to svg, this function opens your default web browser to get you to the `best svg converting website`
 - You can use the function as followes
   ```
-      from sketchpy import utils
-      uitls.get_svg()
+      from sketchpy import canvas
+      canvas.get_svg()
   ```
-- I have include a short url, to monitize this sketchpy package, Just 5 little steps then you can use your svg converter
-     - `Step 1` Just click the `I am not robot` button on the top of the website
-     - `Step 2` You will be redirected to the second site, where you need to scroll to tbe bottom and wait for about 10 seconds until you see `open-continue` button, click it.
-     - `Step 3` A pop up with the same `open-continue` button will be visible, clicl it. Now you will be redirected to another wibsite scroll down and click `I am not a Robot` button.
-     - `Step 4` Now you can see a loading circle, wait 100%, and click `Dual tap fast to get Link`, now click `go to link click open`
-     - `Step 5` Now scroll down and wait for 5 seconds and click `Get link`, That's it you have reached the destinatied website.
--I know, It is kind of annyoing to use short url, But this is the only way that dosent require any skill from the uses. so both of us can get benifited!
- 
       
 
 
@@ -211,7 +203,7 @@ You can sketch image uinsg the class `color_sketch_from_svg`, which takes the in
 Example Code:
 ```
     from sketchpy impor canvas
-    obj = canvas.sketch_from_image("Image Path")
+    obj = canvas.color_sketch_from_svg("Image Path")
     obj.draw()
 ```
 
