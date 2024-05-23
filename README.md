@@ -13,9 +13,9 @@ To install sketchpy on your computer, you can go to your command prompt (command
 
 ### Usage
 
-- Just install the package `pip install sketchpy`
-- Followed by `pip install --upgrade sketchpy` to update the package to the latest version.
-- Import it to you project `import sketchpy` and use as you want😊
+- Just install the package `pip install sketchpy3`
+- Followed by `pip install --upgrade sketchpy3` to update the package to the latest version.
+- Import it to you project `import sketchpy3` and use as you want😊
 
 ### Built with
 
@@ -31,27 +31,46 @@ To install sketchpy on your computer, you can go to your command prompt (command
 
 - you can install the latest version with either
 ```
-    pip install sketchpy==0.1.8
+    pip install sketchpy3==0.3.1
 ```
 or
 ```
-    pip install sketchpy --U
+    pip install sketchpy3 --U
 ```
 
 ## Updates!!
 
-- This version `0.1.8` uses multiprocessing for processing the single svg file in 4 different threads to reduce the time for loading the svg file
+- Now uses `AI` to generate different styles of images for sketching using the class `canvas.ai_sketch_from_image`
+- You can use the function as followes
+  ```
+      from sketchpy3 import canvas
+      if __name__ == "__main__":
+          obj = canvas.ai_sketch_from_image(IMG_PATH,3)
+          obj.draw()
+  ```
+
+- Sample
+ <div align = 'center' style = "display: flex; justify-content: space-between; flex-direction: column;"> 
+        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/d7bfc559-267a-464c-861e-0f2f6714490a">
+        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/ee981888-4fec-4e25-b76c-174f33a05e34">
+        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/b79df331-69c7-4547-b5c9-e8936a1d3a9c">
+        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/65a2578f-1293-4ba8-823f-66c7663a75ee">
+        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/61b1d15f-e43f-41bd-867c-16d3ce45174b">
+</div>
+
+- The first image is the `source image`, and the following corresponds to different styles from `[0-3]`
+- This version `0.3.1` uses multiprocessing for processing the single svg file in 4 different threads to reduce the time for loading the svg file
 - Sample
     <div align = "center">
        <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/5b09576e-3759-4501-bcf4-5134a9c1a133">
     </div>
-- And I have included a new function named `get_svg()` from `utils` to convert your Image to svg, this function opens your default web browser to get you to the `best svg converting website`
+- And I have included a new function named `get_svg()` from `canvas` to convert your Image to svg,
 - You can use the function as followes
   ```
       from sketchpy import canvas
-      canvas.get_svg()
+      canvas.get_svg(img_path)
   ```
-      
+- The `get_svg()` function opens a short url only `once` a day. Just enter the 4 digit number from the landing page from the short url in the cmd to access the svg converter. And you need to complete the short url only once a day, So it's no big deal.      
 
 
 
@@ -64,12 +83,12 @@ or
 ### Install
 
 ```
-    pip install sketchpy
+    pip install sketchpy3
 ```
 it should probably work, If not then try the following code
     
 ```
-    pip install turtle open-cv wheel sketchpy
+    pip install turtle open-cv wheel sketchpy3
 ```
 
 
@@ -81,7 +100,7 @@ Open your code editor and write the example Python code snippets given below. Ru
 ### Drawing Robert Downey Jr. Using Python
 
 ```
-    from sketchpy import library as lib
+    from sketchpy3 import library as lib
     obj = lib.rdj()
     obj.draw()
 ```
@@ -96,7 +115,7 @@ Open your code editor and write the example Python code snippets given below. Ru
 ### Drawing Tom Holland Using Python
 
 ```
-    from sketchpy import library
+    from sketchpy3 import library
     myObject = library.tom_holland()
     myObject.draw()
 ```
@@ -110,14 +129,14 @@ Open your code editor and write the example Python code snippets given below. Ru
 ### More examples
 
 ```
-    from sketchpy import library as lib
+    from sketchpy3 import library as lib
     
     obj = lib.bts()
     obj.draw()
 ```
 
 ```
-    from sketchpy import library as lib
+    from sketchpy3 import library as lib
 
     obj = lib.vijay()
     obj.draw()
@@ -130,7 +149,7 @@ Open your code editor and write the example Python code snippets given below. Ru
 ### Drawing Iron Man ASCII Animation Using Python
 
 ```
-    from sketchpy import library
+    from sketchpy3 import library
     myObject = library.ironman_ascii()
     myObject.draw()
 ```
@@ -159,7 +178,7 @@ The recent version of the package includes a class named `trace_from_image()`, w
 
 Sample Code:
 ```
-    from sketchpy impor canvas
+    from sketchpy3 impor canvas
     obj = canvas.trace_from_image("Image Path")
     obj.draw()
 ```
@@ -202,9 +221,10 @@ to know more about it visit [here](https://codehub03.blogspot.com/2022/04/how-to
 You can sketch image uinsg the class `color_sketch_from_svg`, which takes the inpu in svg formate and then sketches it.
 Example Code:
 ```
-    from sketchpy impor canvas
-    obj = canvas.color_sketch_from_svg("Image Path")
-    obj.draw()
+    from sketchpy3 impor canvas
+    if __name__ == "__main__":
+        obj = canvas.color_sketch_from_svg("Image Path")
+        obj.draw()
 ```
 
 Example output
@@ -217,6 +237,7 @@ Example output
 ### Parameters 
     - color_sketch_from_svg
         - path -> path of the svg file
+        - no_of_processes -> no of individual branches the process the svg file
         - scale -> zoom value
         - x_offset -> amount of movemnt in x direction
         - y_offset -> amount of movemnt in y direction
