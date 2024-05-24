@@ -244,6 +244,18 @@ use the follow code to convert you images to svg files
     ```
 - You can find your output image as `source.jpg` file
 
+### Example
+
+<div align = 'center' style = "display: flex; justify-content: space-between;"> 
+     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/615e59db-2701-4cda-989e-7f98ecb506f9">
+     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/86b89fec-8055-48ea-ac8a-7944c04f2eb9">
+     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/d8440209-cf9d-4e60-98f3-deb54e24ad34">
+     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/a52ae3c3-3d9c-4a94-9ad8-a3ee9a8cf5c6">
+     <img src = "https://github.com/MRMYSTERY003/sketchpy/assets/80098044/d194573a-59d8-4461-8703-caa5366566c4">
+
+
+
+</div>
 
 
 ### Parameters 
